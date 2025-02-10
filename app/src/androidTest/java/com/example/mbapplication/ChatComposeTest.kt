@@ -20,6 +20,7 @@ import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
 import androidx.compose.ui.test.printToLog
+import androidx.test.espresso.Espresso
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.mbapplication.ui.MBNavHost
 import com.example.mbapplication.ui.theme.MBApplicationTheme
@@ -49,7 +50,8 @@ class ChatComposeTest {
             onAllNodesWithText("Hello").assertCountEquals(3)
             performInput("world")
             onAllNodesWithText("world").assertCountEquals(2)
-            backButton.performClick()
+//            backButton.performClick()
+            Espresso.pressBack()
             onNodeWithText("Title").assertExists()
         }
     }

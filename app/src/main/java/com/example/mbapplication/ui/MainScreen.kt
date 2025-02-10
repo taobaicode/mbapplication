@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -46,6 +48,7 @@ fun MainScreen(
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
     input: MainScreenInput,
@@ -60,9 +63,10 @@ fun MainScreen(
             }
         },
         topBar = {
-            Row {
+            CenterAlignedTopAppBar(title = {
                 Text("Title", style = MaterialTheme.typography.titleLarge)
             }
+            )
         },
 //        contentWindowInsets = WindowInsets.statusBars
     ) { paddingValue ->
